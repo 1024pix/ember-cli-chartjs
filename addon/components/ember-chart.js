@@ -297,15 +297,21 @@ export default Component.extend({
 		// destroy the chartjs object class
 		this.get('chart').destroy();
 
-		// remove the observers
-		this.addObserver('data', this, this.updateChart);
-		this.addObserver('data.[]', this, this.updateChart);
-		this.removeObserver('model', this, this.updateChart);
-		this.removeObserver('model.[]', this, this.updateChart);
-		this.removeObserver('_page', this, this.updateChart);
-		this.removeObserver('colors.[]', this, this.updateChart);
-		this.removeObserver('options', this, this.redrawChart);
-		this.removeObserver('type', this, this.redrawChart);
+	
+		function removeObserverFor(key, target, method) {
+			if (target.hasObserverFor(key)) {
+				target.removeObserver(key, target, method);
+			}
+		}
+	
+		removeObserverFor('model',this,this.updateChart); 
+		removeObserverFor('model.[]',this,this.updateChart); 
+		removeObserverFor('_page',this,this.updateChart); 
+		removeObserverFor('colors.[]',this,this.updateChart); 
+		removeObserverFor('data',this,this.updateChart); 
+		removeObserverFor('data.[]',this,this.updateChart); 
+		removeObserverFor('options',this,this.redrawChart); 
+		removeObserverFor('type',this,this.redrawChart); 
 	},
 
 	redrawChart: function() {
