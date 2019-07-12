@@ -4,7 +4,7 @@
 [![Ember Observer Score](https://emberobserver.com/badges/ember-cli-chartjs.svg)](https://emberobserver.com/addons/ember-cli-chartjs)
 [![Ember badge][ember-badge]][embadge]
 
-This Ember CLI addon is a simple wrapper for [ChartJS](http://www.chartjs.org/) (v2.1.6). This addon uses Ember-CLI v2.6.2.
+This Ember CLI addon is a simple wrapper for [ChartJS](http://www.chartjs.org/) (v2.8.0). This addon uses Ember-CLI v3.3.0.
 
 ### Installation
 
